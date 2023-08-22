@@ -1,11 +1,11 @@
 import { Container } from "./styles";
 
 // eslint-disable-next-line react/prop-types
-export function Section({ title, children }) {
+export function Input({ icon: Icon, ...rest }) {
   return (
     <Container>
-      <h2>{title}</h2>
-      {children}
+      {Icon && <Icon size="20px"/>}
+      <input {...rest} />
     </Container>
-  );
+  )
 }
