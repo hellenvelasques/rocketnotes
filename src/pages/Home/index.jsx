@@ -3,6 +3,8 @@ import { Container, Brand, Menu, Search, Content, NewNote } from './styles';
 import { Header } from '../../components/Header';
 import { ButtonText } from '../../components/ButtonText';
 import { Input } from '../../components/Input';
+import CardNote from '../../components/CardNote';
+import { Section } from '../../components/Section';
 
 export function Home() {
 
@@ -27,6 +29,17 @@ export function Home() {
       </Search>
 
       <Content>
+        <Section title="Minhas Notas">
+          <CardNote data={
+            {
+              title: "ReactJS", 
+              tags: [
+                {id: '1', name: 'useEffect'},
+                {id: '2', name: 'useState'}
+              ] 
+            }
+          }/>
+        </Section>
       </Content>  
 
       <NewNote>
