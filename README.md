@@ -1,8 +1,24 @@
-# React + Vite
+<h1 align="center"> FrontEnd - Rockenotes </h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Projeto
 
-Currently, two official plugins are available:
+Este projeto foi desenvolvido para aplicar habilidades em ReactJS, Javascript, HTML e CSS, para a criação do projeto do front-end para a aplicação Roocketnotes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p>
+  <img src="./src/assets/readme-capa.png" width="30%">
+</p>
+
+Para rodar o projeto: <br>
+  ```npm install```<br>
+  <br>```npm run dev```
+
+<br>
+
+## Tecnologias
+- ReactJS
+- HTML
+- CSS
+- JavaScript
+
+
+Projeto criado a partir de um desafio do nível 9 do Explorer da Rocketseat.
