@@ -5,14 +5,19 @@ import { Link } from 'react-router-dom';
 import { Container, Form, Avatar } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
+import placeholderAvatar from '../../assets/avatar_placeholder.svg';
+import { api } from "../../services/api";
 
 export function Profile() { 
   const { user, updateProfile } = useAuth();
-  // const [avatar, setAvatar] = useState(user.avatar);
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
   const [oldPassword, setOldPassword] = useState();
   const [newPassword, setNewPassword] = useState();
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : placeholderAvatar;
+  const [avatar, setAvatar] = useState(avatarUrl);
+  const [avatarFile, setAvatarFile] = useState(null);
 
   async function handleUpdate() {
     const user = {
@@ -22,8 +27,18 @@ export function Profile() {
       oldPassword: oldPassword,
     }
 
-    await updateProfile({ user });
+    await updateProfile({ user, avatarFile });
   }
+
+  function handleChangeAvatar(event) {
+    const file = event.target.files[0];
+
+    setAvatarFile(file);
+
+    const imgPreview = URL.createObjectURL(file);
+    setAvatar(imgPreview);
+  }
+
 
 
   return (
@@ -35,10 +50,14 @@ export function Profile() {
       </header>
       <Form>
         <Avatar>
-          <img src="https://github.com/hellenvelasques.png" alt="Foto do usuário" />
+          <img 
+            src={ avatar ? avatar : placeholderAvatar}  
+            alt="Foto do usuário"
+          />
+
           <label htmlFor="avatar">
             <FiCamera />
-            <input id="avatar" type="file"/>
+            <input id="avatar" type="file" onChange={handleChangeAvatar}/>
           </label>
         </Avatar>
         
