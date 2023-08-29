@@ -15,25 +15,26 @@ export const Container = styled.div`
     overflow-y: auto;
   }
 
+
+  .buttonSave {
+      margin-top: 34px;
+    }
+    
   .content {
     display: flex;
     flex-direction: column;
-    gap: 37px;
   }
 
   .tags {
-    margin-bottom: 34px;
-
-    width: 100%;
     display: flex;
     justify-content: space-between;
-    box-sizing: border-box;
-    gap: 16px;
+
+    flex-wrap: wrap;
   }
 `;
 
 export const Form = styled.form`
-  max-width: 550px;
+  max-width: 530px;
   margin: 38px auto;
 
   > header {
@@ -47,10 +48,12 @@ export const Form = styled.form`
       font-weight: 500;
     }
 
-    a {
+    button {
       color: ${({ theme }) => theme.COLORS.GRAY_100};
       font-size: 20px;
       font-weight: 400;
     }
+
+    
   }
 `;

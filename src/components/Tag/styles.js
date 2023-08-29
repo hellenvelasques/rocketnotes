@@ -6,7 +6,7 @@ export const Container = styled.span`
   border-radius: 5px;
   padding: 5px 14px;
 
-  margin-right: 6px;
+margin-right: 6px;
 
   font-size: 12px;
   font-weight: 400;

@@ -22,7 +22,7 @@ export function SignUp() {
     api.post('/users', { name, email, password })
     .then(() => {
       alert('Cadastro realizado com sucesso!');
-      navigate('/');
+      navigate(-1);
     })
     .catch(error => {
       if(error.response) {
@@ -63,7 +63,8 @@ export function SignUp() {
           onChange={(event) => setPassword(event.target.value)}
         />
 
-        <Button 
+        <Button
+          className="buttonSignUp"
           type="button" 
           title="Cadastrar"
           onClick={handleSignUp}

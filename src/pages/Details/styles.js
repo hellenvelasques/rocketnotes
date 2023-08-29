@@ -15,6 +15,10 @@ export const Container = styled.div`
     overflow-y: auto;
     padding: 64px 0;
   }
+
+  .buttonBack {
+    margin-top: 134px;
+  }
 `;
 
 export const Links = styled.ul`
